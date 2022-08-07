@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.FandF"
+    android:background="#E0E0E0"
+    android:orientation="vertical"
+    android:padding="2dp">
+
+
+    <TableLayout
+        android:id="@+id/TableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="1"
+        android:padding="10dp">
+
+        <TableRow>
+
+            <Button
+                android:layout_width="199dp"
+                android:layout_height="wrap_content"
+                android:background="#00000"
+                android:text="关注"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="212dp"
+                android:layout_height="wrap_content"
+                android:text="粉丝"
+                android:textColor="@color/black"
+                android:background="#00000"
+                android:textSize="20sp"/>
+        </TableRow>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"/>
+
+</LinearLayout>
