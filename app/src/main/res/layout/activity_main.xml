@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< Updated upstream
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<!--个人的主界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> Stashed changes
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< Updated upstream
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -42,3 +48,202 @@
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+=======
+    tools:context=".myself"
+    android:background="#EEEEEE"
+    android:orientation="vertical"
+    android:padding="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:id="@+id/HeadPic"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:background="#E0E0E0"
+            android:src="@mipmap/ic_launcher"
+            android:padding="2dp"/>
+<!--我指定了一张图片方便观察-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="   昵称："
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:hint="点击输入你的昵称"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="  "
+            android:textSize="20sp"
+            android:padding="3dp"/>
+<!--        上面这个控件用来传递点赞数量-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  获赞"
+            android:textSize="20sp"
+            android:padding="3dp"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="  "
+            android:textSize="20sp"
+            android:padding="3dp"/>
+<!--        这个控件用来传递关注人数-->
+        <Button
+            android:id="@+id/button_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关注"
+            android:textSize="20sp"
+            android:background="#EEEEE"
+            android:textColor="@color/black"
+            android:padding="3dp"/>
+<!--        以button写的，没有写成tab那样-->
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="  "
+            android:textSize="20sp"
+            android:padding="3dp"/>
+<!--        传递粉丝人数-->
+        <Button
+            android:id="@+id/button_fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="粉丝"
+            android:textSize="20sp"
+            android:background="#EEEEE"
+            android:textColor="@color/black"
+            android:padding="3dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/summary_introduction"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:padding="5dp"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:maxLines="3"
+            android:padding="5dp"
+            />
+<!--        个人简介设置了一个限制,最多3行-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="年龄："
+            android:textColor="@color/black"
+            android:padding="5dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="  国家："
+            android:textColor="@color/black"
+            android:padding="5dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="  省市："
+            android:textColor="@color/black"
+            android:padding="5dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="  性别："
+            android:textColor="@color/black"
+            android:padding="5dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:padding="5dp"/>
+<!--        个人信息都是以编辑而不是菜单方式写的,感觉要提供选择有点麻烦,可以重写,只提供中国\北京\东城等几个选项-->
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="我的作品"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:padding="5dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="15dp"/>
+<!--    视频列表-->
+</LinearLayout>
+>>>>>>> Stashed changes

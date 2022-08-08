@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">miniTiktok</string>
+    <string name="summary_introduction">个人简介：</string>
 </resources>

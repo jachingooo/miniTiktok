@@ -12,6 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
+<<<<<<< Updated upstream
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab6"
             android:layout_width="wrap_content"
@@ -171,11 +172,130 @@
             android:text="转发量"
             android:textColor="@color/black"
             android:textSize="20sp" />
+=======
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:paddingBottom="30dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/textView6"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/zhuanfa" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/textView5"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/fenxiang" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/textView4"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/xiazai" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/textView3"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/pinglun" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/textView2"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/dianzan" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/textView1"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/bofang" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fab2"
+                android:layout_alignParentRight="true"
+                android:text="播放量"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fab3"
+                android:layout_alignParentRight="true"
+                android:text="点赞量"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fab4"
+                android:layout_alignParentRight="true"
+                android:text="评论量"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fab5"
+                android:layout_alignParentRight="true"
+                android:text="下载量"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/fab6"
+                android:layout_alignParentRight="true"
+                android:text="分享量"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:text="转发量"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+>>>>>>> Stashed changes
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< Updated upstream
             android:text="标题："
             android:textColor="@color/black"
             android:textSize="70sp"
@@ -183,6 +303,15 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="50dp"
             android:layout_marginLeft="20dp"/>
+=======
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="50dp"
+            android:text="标题："
+            android:textColor="@color/black"
+            android:textSize="70sp" />
+>>>>>>> Stashed changes
 
         <TextView
             android:id="@+id/textView8"
