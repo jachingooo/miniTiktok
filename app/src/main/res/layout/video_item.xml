@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<!--这是视频列表中，每一个小的item的布局设计-->
+<!--考虑到要求展示的内容过多，可以考虑将每个视频展示成纵向偏长的长方形。-->
+>>>>>>> Stashed changes
 =======
 <!--这是视频列表中，每一个小的item的布局设计-->
 <!--考虑到要求展示的内容过多，可以考虑将每个视频展示成纵向偏长的长方形。-->
@@ -26,7 +31,11 @@
             android:textColor="@color/black"
             android:textSize="50sp" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+<!--            这是标题-->
+>>>>>>> Stashed changes
 =======
 <!--            这是标题-->
 >>>>>>> Stashed changes
@@ -36,6 +45,10 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_launcher" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<!--        视频的封面，我设置了一个图源，便于观察，后续应该去掉-->
+>>>>>>> Stashed changes
 =======
 <!--        视频的封面，我设置了一个图源，便于观察，后续应该去掉-->
 >>>>>>> Stashed changes
@@ -44,6 +57,10 @@
             android:layout_height="wrap_content"
             android:text="创建时间："/>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<!--        创建时间，同样我自己设置了文本内容，后续传递进参数应该去掉-->
+>>>>>>> Stashed changes
 =======
 <!--        创建时间，同样我自己设置了文本内容，后续传递进参数应该去掉-->
 >>>>>>> Stashed changes
@@ -64,6 +81,10 @@
             android:layout_height="wrap_content"
             android:text="置顶："/>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+<!--        置顶暂时不知是应该显示指定图标，还是以文字展示，后期可以更改成图标-->
+>>>>>>> Stashed changes
 =======
 <!--        置顶暂时不知是应该显示指定图标，还是以文字展示，后期可以更改成图标-->
 >>>>>>> Stashed changes

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ResourceName"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_white"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:text="电影榜单"/>
+    </LinearLayout>
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tab_type"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        tl:tl_iconVisible="false"
+        android:background="@color/color_white"
+        tl:tl_textSelectColor="@color/color_black"
+        tl:tl_textUnselectColor="@color/color_9697A2"
+        tl:tl_indicator_color="@color/color_black"
+        tl:tl_indicator_corner_radius="1.5dp"
+        tl:tl_indicator_height="3dp"
+        tl:tl_textBold="BOTH"
+        tl:tl_indicator_width="30dp"
+        tl:tl_textsize="16sp"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

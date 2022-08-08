@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<!--个人的主界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> Stashed changes
 =======
 <!--个人的主界面-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -9,6 +14,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     tools:context=".MainActivity">
 
@@ -49,6 +55,8 @@
         app:srcCompat="@android:drawable/ic_dialog_email" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 =======
+=======
+>>>>>>> Stashed changes
     tools:context=".myself"
     android:background="#EEEEEE"
     android:orientation="vertical"
@@ -245,5 +253,9 @@
         app:layout_constraintTop_toTopOf="parent"
         android:padding="15dp"/>
 <!--    视频列表-->
+<<<<<<< Updated upstream
+</LinearLayout>
+>>>>>>> Stashed changes
+=======
 </LinearLayout>
 >>>>>>> Stashed changes
