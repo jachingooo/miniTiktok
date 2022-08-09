@@ -1,5 +1,6 @@
 package com.test.miniTiktok.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -153,7 +154,7 @@ open class BaseAdapter<T> : DelegateAdapter.Adapter<BaseAdapter.BaseViewHolder> 
         return BaseViewHolder(LayoutInflater.from(mContext).inflate(mLayoutId, parent, false))
     }
 
-    override fun onBindViewHolder(@NonNull holder: BaseViewHolder, position: Int) {
+    override fun onBindViewHolder(@NonNull holder: BaseViewHolder, @SuppressLint("RecyclerView") position: Int) {
         if (onItemClickListener != null) {
             holder.itemView.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View) {
