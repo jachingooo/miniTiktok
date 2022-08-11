@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.test.miniTiktok.util.VerticalViewPager
+    <com.qxy.miniTiktok.util.VerticalViewPager
         android:id="@+id/vp_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
