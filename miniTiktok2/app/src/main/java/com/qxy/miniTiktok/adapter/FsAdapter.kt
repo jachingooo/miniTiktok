@@ -24,7 +24,7 @@ class FsAdapter :BaseAdapter<FsBean> {
         var bean = mList.get(position)
         var iv_img=holder.getView<ImageView>(R.id.iv_img)
         var iv_xb=holder.getView<ImageView>(R.id.iv_xb)
-        iv_img.setImageResource(bean?.url!!)
+        iv_img.setImageBitmap(bean?.url!!)
         holder.setText(R.id.tv_nc, bean?.name)
         holder.setText(R.id.tv_city, bean?.city)
         iv_xb.setImageResource(R.mipmap.touxiang)

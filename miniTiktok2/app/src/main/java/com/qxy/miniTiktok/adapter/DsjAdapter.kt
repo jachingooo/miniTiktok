@@ -28,7 +28,7 @@ class DsjAdapter :BaseAdapter<DsjBean> {
             holder.setText(R.id.btn_pm,""+(position+1))
         var bean = mList.get(position)
         var iv_img=holder.getView<ImageView>(R.id.iv_img)
-        iv_img.setImageResource(bean?.url!!)
+        iv_img.setImageBitmap(bean?.url!!)
         holder.setText(R.id.tv_name, bean.name+" "+bean.type)
         holder.setText(R.id.tv_ename, bean.nameEn)
         holder.setText(R.id.tv_dyandzz, bean.createUser)

@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:textColor="@color/color_white"
-            android:text="我的关注(100人)"/>
+            android:text="我的关注(2人)"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

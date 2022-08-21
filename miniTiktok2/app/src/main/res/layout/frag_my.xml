@@ -11,7 +11,7 @@
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
         android:background="@color/colorPrimary"
-        android:gravity="center"
+        android:gravity="left"
         android:orientation="vertical">
 
         <LinearLayout
@@ -22,7 +22,7 @@
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@mipmap/touxiang"/>
+                android:src="@mipmap/head1"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,14 +33,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
                     android:textColor="@color/color_white"
-                    android:text="昵称"/>
+                    android:text="林小冰"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textSize="12sp"
                     android:textColor="@color/color_white"
-                    android:text="中国 上海"/>
+                    android:text="四川 成都"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -55,7 +55,7 @@
                 android:paddingEnd="6dp"
                 android:textSize="16sp"
                 android:textColor="@color/color_white"
-                android:text="12w赞"/>
+                android:text="0获赞"/>
             <TextView
                 android:id="@+id/tv_gz"
                 android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
                 android:paddingEnd="6dp"
                 android:textSize="16sp"
                 android:textColor="@color/color_white"
-                android:text="100关注"/>
+                android:text="2关注"/>
             <TextView
                 android:id="@+id/tv_fs"
                 android:layout_width="wrap_content"
@@ -73,7 +73,7 @@
                 android:paddingEnd="6dp"
                 android:textSize="16sp"
                 android:textColor="@color/color_white"
-                android:text="8000粉丝"/>
+                android:text="1粉丝"/>
         </LinearLayout>
 
         <TextView
@@ -82,7 +82,7 @@
             android:layout_marginTop="6dp"
             android:textSize="14sp"
             android:textColor="@color/color_white"
-            android:text="个人简介:哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽哈喽"/>
+            android:text="个人简介:hellohello"/>
 
     </LinearLayout>
 

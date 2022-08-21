@@ -1,6 +1,9 @@
 package com.qxy.miniTiktok
 
 import android.app.Application
+import android.content.Context
+import com.bytedance.sdk.open.douyin.DouYinOpenApiFactory
+import com.bytedance.sdk.open.douyin.DouYinOpenConfig
 import com.lzy.okgo.OkGo
 
 
@@ -14,5 +17,10 @@ class MyApplication: Application() {
         super.onCreate()
         //初始化OkGo
         OkGo.getInstance().init(this)
+
+        val clientkey = "awvayupkp25mxr6u" // 需要到开发者网站申请
+
+        DouYinOpenApiFactory.init(DouYinOpenConfig(clientkey))
     }
+
 }

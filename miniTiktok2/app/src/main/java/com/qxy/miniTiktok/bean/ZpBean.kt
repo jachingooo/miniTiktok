@@ -2,6 +2,7 @@ package com.qxy.miniTiktok.bean
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+import java.net.URL
 
 /**
  * @description 抖音作品对象bean
@@ -11,7 +12,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class ZpBean(
     var isTop:Boolean?=null,
-    var url:Int?=null,
+    var url: URL?=null,
     var title:String?=null,
     var time:String?=null,
     var playcount:Int?=null,

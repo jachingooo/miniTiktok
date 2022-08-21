@@ -26,7 +26,7 @@ class ZpAdapter  :BaseAdapter<ZpBean> {
         //layout_fm.setBackgroundResource(bean?.url!!)
         holder.setVisible(R.id.btn_zd,bean?.isTop!!)
         holder.setText(R.id.tv_title, bean.title)
-        holder.setText(R.id.tv_time, bean.title)
+        holder.setText(R.id.tv_time, bean.time)
         holder.setText(R.id.tv_bfnum,""+bean.playcount)
         holder.setText(R.id.tv_plnum, ""+bean.plcount)
 

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.qxy.miniTiktok.DemoMainAct">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="授权"
+            android:layout_marginTop="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/go_to_auth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="抖音授权"
+            android:layout_marginTop="20dp" />
+        <Button
+            android:id="@+id/require_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="必选电话"
+            android:layout_marginTop="20dp" />
+        <Button
+            android:id="@+id/option_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可选电话"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/is_support_mix_share_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是否支持混合分享"/>
+
+        <Button
+            android:id="@+id/go_to_system_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/open_system_photo"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/share_to_tiktok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_to_aweme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/go_to_system_picture"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/share_to_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分享到联系人图片" />
+        <Button
+            android:id="@+id/share_to_contact_html"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分享到联系人html"
+            />
+        <Button
+            android:id="@+id/open_record"
+            android:text="测试打开拍摄页"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/use_file_provider"
+            android:text="使用FileProvider"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"/>
+
+
+
+        <Button
+            android:id="@+id/share_to_douyin_with_shareid_no_callback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_to_aweme_with_shareid_no_callbacK"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/microbutton"
+            android:layout_width="wrap_content"
+            android:text="分享携带小程序"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/share_to_douyin_with_shareid_callback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share_to_aweme_with_shareid_callback"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/share_to_douyin_with_shareid_no_callback"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/set_default_hashtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_default_title"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/set_default_hashtag1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第二个默认话题"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/media_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/media_path"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_default_hashtag"
+            android:visibility="gone"/>
+
+
+        <Button
+            android:id="@+id/clear_media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear"
+            android:layout_marginRight="20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/media_text"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</ScrollView>

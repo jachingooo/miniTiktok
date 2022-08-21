@@ -3,6 +3,14 @@
     package="com.qxy.miniTiktok">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <queries>
+        <!--允许查询抖音和抖音极速版的信息-->
+        <package android:name="com.ss.android.ugc.aweme" />
+        <package android:name="com.ss.android.ugc.aweme.lite" />
+    </queries>
 
     <application
         android:name="com.qxy.miniTiktok.MyApplication"
@@ -21,9 +29,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity android:name="com.qxy.miniTiktok.DemoMainAct"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity
+            android:name=".douyinapi.DouYinEntryActivity"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.qxy.miniTiktok"
+            android:exported="true">
+        </activity>
 
         <activity android:name="com.qxy.miniTiktok.act.FansAct"/>
         <activity android:name="com.qxy.miniTiktok.act.MovieActivity"/>
+
 
     </application>
 

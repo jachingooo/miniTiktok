@@ -1,21 +1,32 @@
 package com.qxy.miniTiktok.frag
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.lzy.okgo.OkGo
 import com.lzy.okgo.callback.StringCallback
 import com.lzy.okgo.model.Response
 import com.qxy.miniTiktok.PopWindowsUtil
 import com.qxy.miniTiktok.R
 import com.qxy.miniTiktok.adapter.ZyAdapter
+import com.qxy.miniTiktok.bean.DsjBean
+import com.qxy.miniTiktok.bean.ZyBean
 import com.qxy.miniTiktok.util.TestDataBean
+import com.qxy.miniTiktok.util.bdResponse
+import java.io.InputStream
+import java.net.HttpURLConnection
+import java.net.URL
+import kotlin.concurrent.thread
 
 /**
  * @description 综艺页面Fragment
@@ -49,23 +60,83 @@ class ZyFragment : Fragment(){
      * 测试数据
      */
     private fun initData(){
-        adapter?.appendToList(TestDataBean.getZyData())
+        getServerData()
     }
 
-    private val url = "写自己的接口地址"
+    private val url = "https://open.douyin.com/discovery/ent/rank/item"
+    private val url2="https://open.douyin.com/discovery/ent/rank/version/"
     private fun getServerData() {
-        OkGo.post<String>(url)
+        val TAG = "getServerData"
+        OkGo.get<String>(url)
             .tag(this)
-            .params("入参key","")
-            .execute(object : StringCallback() {
-                @SuppressLint("WrongConstant") //Response<T> 写对应的后台返回的bean
-                override fun onSuccess(response: Response<String>) {
-                    if (response.code() == 200) {
-                        if (!TextUtils.isEmpty(response.body())) {
-                            //解析服务器返回的数据
+            .cacheKey("cachekey")
+            .headers("access-token","clt.477cbe21940bb970f8d7951a33ede687krPVpYvf96gRjDtqAaUnjhbUdTEq")
+            .params("type",3)
+            .execute(
+                object : StringCallback() {
+                    @SuppressLint("WrongConstant") //Response<T> 写对应的后台返回的bean
+                    override fun onSuccess(response: Response<String>) {
+                        val json = response.body().toString()
+                        Log.d(TAG, "onSuccess: "+json)
+                        val newsResponse = Gson().fromJson(json, bdResponse::class.java)
+                        if (response.code() == 200) {
+                            if (!TextUtils.isEmpty(response.body())) {
+                                val da = newsResponse.data.list
+                                val dat = ArrayList<ZyBean>()
+                                val t1 = thread {
+                                    for (i in da) {
+                                        var dir:String = ""
+                                        var are:String = ""
+                                        if (i.directors == null){
+                                            dir = ""
+                                        } else {
+                                            for (a in i.directors){
+                                                dir += "$a "
+                                            }
+                                        }
+                                        if (i.areas == null){
+                                            are = ""
+                                        } else {
+                                            for (a in i.areas){
+                                                are += "$a "
+                                            }
+                                        }
+                                        val dsj = ZyBean(
+                                            getURLimage(i.poster),
+                                            i.name,
+                                            i.name_en,
+                                            dir,
+                                            "讨论 "+i.discussion_hot,
+                                            "主题 "+i.topic_hot,
+                                            "搜索 "+i.search_hot,
+                                            "影响力 "+i.influence_hot
+                                        )
+                                        dat.add(dsj)
+                                    }
+                                }
+                                t1.join()
+                                adapter?.clear()
+                                adapter?.appendToList(dat)
+                            }
                         }
                     }
-                }
-            })
+                },
+            )
+    }
+
+    private fun getURLimage(url:String): Bitmap {
+        val TAG = "getURLimage"
+        var bmp: Bitmap = BitmapFactory.decodeResource(resources,R.mipmap.head1)
+        try {
+            val myurl = URL(url)
+            val conn: HttpURLConnection = myurl.openConnection() as HttpURLConnection
+            conn.connect()
+            val str: InputStream = conn.inputStream
+            bmp = BitmapFactory.decodeStream(str)
+            str.close()
+        } catch (e:Exception){
+            e.printStackTrace()
+        }
+        return bmp
     }
 }

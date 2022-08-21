@@ -1,6 +1,8 @@
 package com.qxy.miniTiktok.act
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -8,11 +10,22 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.google.gson.Gson
+import com.lzy.okgo.OkGo
+import com.lzy.okgo.callback.StringCallback
+import com.lzy.okgo.model.Response
 import com.qxy.miniTiktok.R
+import com.qxy.miniTiktok.bean.VideoBean
 import com.qxy.miniTiktok.bean.ZpBean
 import com.qxy.miniTiktok.frag.MovieFragment
+import com.qxy.miniTiktok.frag.MyFragment
 import com.qxy.miniTiktok.util.TestDataBean
 import kotlinx.android.synthetic.main.act_movie.*
+import java.net.URL
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.concurrent.thread
 
 
 /**
@@ -41,8 +54,7 @@ class MovieActivity :AppCompatActivity(){
     }
 
     private fun initData(){
-        mAdapter?.setmList(TestDataBean.getMovieData())
-        mAdapter?.notifyDataSetChanged()
+        getServerData()
 
     }
 
@@ -80,5 +92,62 @@ class MovieActivity :AppCompatActivity(){
         override fun onPageSelected(position: Int) {
             mPosition=position
         }
+    }
+    private val url = "https://open.douyin.com/video/list"
+
+
+    private fun getServerData() {
+
+        OkGo.get<String>(url)
+            .tag(this)
+            .params("count", 10)
+            .params("open_id", "_000ZjFPfB26u0nnppodCXU4uKrWTtYogwlf")
+            .headers("access-token","act.689358472bd7c60133ef7fb1e925c9e3QKkZbuOeuLUKuo4q6dBstsshdw8y")
+            .execute(object : StringCallback() {
+                @SuppressLint("WrongConstant") //Response<T> 写对应的后台返回的bean
+                override fun onSuccess(response: Response<String>) {
+                    val jsonRs = response.body().toString()
+
+                    val res = Gson().fromJson(jsonRs, VideoBean::class.java)
+                    if (response.code() == 200) {
+                        if (!TextUtils.isEmpty(response.body())) {
+                            val Fsdata = res.data.list
+                            val FsList = ArrayList<ZpBean>()
+                            val t1 = thread {
+                                for (i in Fsdata) {
+
+                                    val Fs = ZpBean(
+                                        i.is_top,
+                                        URL(i.share_url),
+                                        i.title,
+                                        i.create_time.toDateStr(),
+                                        i.statistics.play_count,
+                                        i.statistics.comment_count,
+                                        i.statistics.digg_count,
+                                        i.statistics.comment_count,
+                                        i.statistics.download_count,
+                                        i.statistics.forward_count,
+                                        i.statistics.share_count
+                                    )
+                                    FsList.add(Fs)
+                                }
+                            }
+                            t1.join()
+                            mAdapter?.setmList(FsList)
+                            mAdapter?.notifyDataSetChanged()
+                            //解析服务器返回的数据
+
+
+                        }
+                    }
+                }
+            })
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    fun Long.toDateStr(pattern: String = "yyyy-MM-dd HH:mm:ss"): String {
+        val date = Date(this)
+        val format = SimpleDateFormat(pattern)
+        return format.format(date)
     }
 }

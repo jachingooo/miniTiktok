@@ -1,12 +1,14 @@
 package com.qxy.miniTiktok.bean
 
+import android.graphics.Bitmap
+
 /**
  * @description 电影对象bean
  * @time:
  * @author:
  */
 data class DyBean(
-    var url:Int?=null,
+    var url:Bitmap?=null,
     var name:String?=null,
     var createUser:String?=null,
     var time:String?=null,

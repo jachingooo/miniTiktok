@@ -1,7 +1,9 @@
 package com.qxy.miniTiktok.act
 
+
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -11,6 +13,7 @@ import com.qxy.miniTiktok.frag.DyFragment
 import com.qxy.miniTiktok.frag.MyFragment
 import com.qxy.miniTiktok.frag.ZyFragment
 import kotlinx.android.synthetic.main.act_newmain.*
+
 
 
 /**
@@ -30,13 +33,33 @@ class NewMainAct :AppCompatActivity(){
     private val fragment3: Fragment = ZyFragment()
     private val fragment4: Fragment = MyFragment()
 
+
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.act_newmain)
+        Log.d("debug", "onCreate: ")
+
+
+
         initView()
     }
 
     private fun initView() {
+//        DataBaseManager.saveApplication(application)
+//        val userDao = DataBaseManager.db.userDao()
+//        val user = userDao.getMe()
+
+//        if (user == null) {
+//            set_auth()
+//            Log.d("code", "onCreate: set auth code")
+//
+//            //getAccessToken()
+//            Log.d("onCreate", "onCreate: get accessToken")
+//        }
         //默认首页
         rg_type.check(R.id.rb_one)
         changeFragment(TAG_DY)
@@ -86,4 +109,5 @@ class NewMainAct :AppCompatActivity(){
         }
         transaction.commit()
     }
+
 }

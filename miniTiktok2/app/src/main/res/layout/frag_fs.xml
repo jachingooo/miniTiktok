@@ -18,13 +18,13 @@
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:textColor="@color/color_white"
-            android:text="我的粉丝(8000人)"/>
+            android:text="我的粉丝(1人)"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>

@@ -40,7 +40,7 @@ class WlFrag :Fragment(){
         var iv_sxwl=v.findViewById<ImageView>(R.id.iv_sxwl)
         adapter = DyAdapter(requireActivity())
         rv_main.adapter = adapter
-        initData()
+        //initData()
 
         iv_sxwl.setOnClickListener {
             PopWindowsUtil.showPop(requireActivity(),iv_sxwl)
@@ -50,24 +50,24 @@ class WlFrag :Fragment(){
     /**
      * 测试数据
      */
-    private fun initData(){
-        adapter?.appendToList(TestDataBean.getWlData())
-    }
-
-    private val url = "写自己的接口地址"
-    private fun getServerData() {
-        OkGo.post<String>(url)
-            .tag(this)
-            .params("入参key","")
-            .execute(object : StringCallback() {
-                @SuppressLint("WrongConstant") //Response<T> 写对应的后台返回的bean
-                override fun onSuccess(response: Response<String>) {
-                    if (response.code() == 200) {
-                        if (!TextUtils.isEmpty(response.body())) {
-                            //解析服务器返回的数据
-                        }
-                    }
-                }
-            })
-    }
+//    private fun initData(){
+//        adapter?.appendToList(TestDataBean.getWlData())
+//    }
+//
+//    private val url = "写自己的接口地址"
+//    private fun getServerData() {
+//        OkGo.post<String>(url)
+//            .tag(this)
+//            .params("入参key","")
+//            .execute(object : StringCallback() {
+//                @SuppressLint("WrongConstant") //Response<T> 写对应的后台返回的bean
+//                override fun onSuccess(response: Response<String>) {
+//                    if (response.code() == 200) {
+//                        if (!TextUtils.isEmpty(response.body())) {
+//                            //解析服务器返回的数据
+//                        }
+//                    }
+//                }
+//            })
+//    }
 }
